@@ -578,11 +578,15 @@ Le fichier contient les `TODO` à remplir. Les points essentiels :
     ar-modes="scene-viewer quick-look webxr"
     ar-scale="auto"
     camera-controls
-    shadow-intensity="1"
-    poster="{{ url_for('static', filename='models/' ~ modele.poster) }}">
+    shadow-intensity="1">
   <button slot="ar-button">👁️ Voir dans ma pièce</button>
 </model-viewer>
 ```
+
+> 💡 **`poster` n'est pas dans la liste ci-dessus, et c'est voulu** : c'est
+> l'objet de l'exercice 2.3. Attention, le catalogue livre `"poster": null` —
+> un attribut rendu inconditionnellement afficherait `/static/models/None`.
+> À vous de ne le produire que lorsque la valeur existe.
 
 > 📌 **Le détail qui fait échouer la moitié de la classe : iOS.** Android lit le `.glb`,
 > mais **AR Quick Look sur iPhone exige un fichier `.usdz`**. Convertissez votre modèle
